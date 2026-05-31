@@ -30,6 +30,11 @@ public class TodoItemController {
         return service.create(item);
     }
 
+    @PutMapping("/{id}")
+    public TodoItem update(@PathVariable Long id, @RequestBody TodoItemRequest request) {
+        return service.update(id, request);
+    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);
